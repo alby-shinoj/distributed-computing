@@ -1,0 +1,29 @@
+.nr-ext-icon {
+    overflow: hidden;
+    height: 30px;
+    width: 30px;
+}
+
+.rs-btn-play {
+    background: url(chrome-extension://kohfgcgbkjodfcfkcackpagifgbcmimk/assets/img/readicon.svg) center center no-repeat;
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    outline-style: none;
+}
+
+.headphones {
+    background: url(chrome-extension://kohfgcgbkjodfcfkcackpagifgbcmimk/assets/img/headphone.svg) center center no-repeat;
+    height: 30px;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    outline-style: none;
+}
+
+
+.nr-onhover{
+    background-color: #D5E5FE !important;
+    cursor: pointer;
+}

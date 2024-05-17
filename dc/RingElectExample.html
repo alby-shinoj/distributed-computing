@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<TITLE>
+CS 551: Synchronization,  Token Ring Election Algorithm Example
+</TITLE>
+</HEAD>
+
+<BODY BACKGROUND="http://www.CS.ColoState.EDU/~cs551/Figures/csucs.gif"
+        TEXT="#000000" VLINK="#0000a0"
+        LINK="#0000ff" ALINK="#ff0000" BGCOLOR="#c0c0ff">
+         
+<HR NOSHADE COLOR=NAVY>
+<FONT COLOR=NAVY>
+<H4>
+CS 551: Distributed Operating Systems
+<BR>
+Token Ring Election Algorithm Example
+</H4>
+</FONT>
+<P> <HR NOSHADE COLOR=NAVY>
+<H2>Token Ring Election Algorithm Example</H2>
+<DL>
+<P>
+	<DD>We start with 6 processes,
+	<BR> &#160; &#160;
+		connected in a logical ring.
+	<DD>Process 6 is the leader,
+	<BR> &#160; &#160;
+		as it has the highest number.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect0.gif">
+</CENTER>
+<P>
+	<DD>Process 6 fails.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect1.gif">
+</CENTER>
+<P>
+	<DD>Process 3 notices that Process 6 does not respond
+	<BR> &#160; &#160;
+		So it starts an election,
+	<BR> &#160; &#160; &#160; &#160;
+		sending a message containing its id
+	<BR> &#160; &#160;
+		to the next node in the ring.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect2.gif">
+</CENTER>
+<P>
+	<DD>Process 5 passes the message on,
+	<BR> &#160; &#160;
+		adding its own id to the message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect3.gif">
+</CENTER>
+<P>
+	<DD>Process 0 passes the message on,
+	<BR> &#160; &#160;
+		adding its own id to the message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect4.gif">
+</CENTER>
+<P>
+	<DD>Process 1 passes the message on,
+	<BR> &#160; &#160;
+		adding its own id to the message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect5.gif">
+</CENTER>
+<P>
+	<DD>Process 4 passes the message on,
+	<BR> &#160; &#160;
+		adding its own id to the message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect6.gif">
+</CENTER>
+<P>
+	<DD>When Process 3 receives the message back,
+	<BR> &#160; &#160;
+		it knows the message has gone around the ring,
+	<BR> &#160; &#160; &#160; &#160;
+		as its own id is in the list.
+	<DD>Picking the highest id in the list,
+	<BR> &#160; &#160;
+		it starts the coordinator message
+	<BR> &#160; &#160; &#160; &#160;
+		<I>"5 is the leader"</I> around the ring.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect7.gif">
+</CENTER>
+<P>
+	<DD>Process 5 passes on the coordinator message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect8.gif">
+</CENTER>
+<P>
+	<DD>Process 0 passes on the coordinator message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect9.gif">
+</CENTER>
+<P>
+	<DD>Process 1 passes on the coordinator message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect10.gif">
+</CENTER>
+<P>
+	<DD>Process 4 passes on the coordinator message.
+<P>
+<CENTER>
+<IMG SRC="../../Figures/RingElect11.gif">
+</CENTER>
+<P>
+	<DD>Process 3 receives the coordinator message,
+	<BR> &#160; &#160;
+		and stops it.
+<P>
+</DL>
+<P><HR NOSHADE COLOR=NAVY>
+<FONT SIZE=2>
+<HR NOSHADE COLOR=NAVY>
+<B>Comments:</B>
+<A HREF="mailto:schauble@CS.ColoState.EDU"><IMG SRC="http://www.cs.colostate.edu/~schauble/Figures/address85.gif"></A>
+<BR>
+<B>Copyright &#169 2001-2003:
+Colorado State University for CS 551.</B>
+All rights reserved.
+<HR NOSHADE COLOR=NAVY>
+
+</BODY>
+</HTML>
